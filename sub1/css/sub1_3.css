@@ -1,0 +1,165 @@
+@charset "UTF-8";
+/* CI 본문 영역 전체를 가운데로 */
+#content .content_area {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== 타이틀 영역 (CI, 브레드크럼, 리드문구) ===== */
+.title_area {
+    text-align: center;
+    padding: 80px 0 100px;
+}
+
+.title_area .line_map {
+    text-align: right;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    font-size: var(--font-16-size);
+}
+
+.title_area .line_map strong {
+    color: var(--color-main);
+    font-weight: 700;
+}
+
+.title_area h2 {
+    font-size: var( --font-h2-size);
+    font-weight: 800;
+    color: #222;
+}
+
+.title_area h2 span {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ff2200;
+    margin-bottom: 12px;
+}
+
+.title_area > p {
+    margin-top: 36px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-font1);
+}
+
+
+/* ===== 시그니처 섹션 ===== */
+.signature_sec {
+    padding-bottom: 80px;
+}
+
+.signature_top {
+    display: flex;
+    gap: 50px;  
+    margin-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.signature_tit {
+    flex-shrink: 0;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    color: #666;
+}
+
+.signature_tit strong {
+    font-size: var(--font-h6-size);
+    font-weight: 800;
+    color: var(--color-main);
+    margin-bottom: 10px;
+}
+
+.signature_txt p {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.9;
+    color: #333;
+}
+
+.signature_list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.signature_list li {
+    text-align: center;
+}
+
+.signature_list img {
+    width: 403px;
+    height: 69px;
+    border: 1px solid #ddd;
+}
+
+.signature_list span {
+    display: block;
+    margin-top: 30px;
+    font-size: var(--font-slogan-size);
+    font-weight: 700;
+    color: var(--color-font1);
+}
+
+/* ===== 컬러시스템 섹션 ===== */
+.color_sec {
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.color_sec h3 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 50px;
+}
+
+.color_list {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+}
+
+.color_list li {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.color_box {
+    display: block;
+    width: 226px;
+    height: 125px;
+}
+
+.color_box.red {
+    background-color: var(--color-main);
+}
+
+.color_box.black {
+    background-color: #221814;
+}
+
+.color_info {
+    text-align: left;
+}
+
+.color_info strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.color_info span {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}

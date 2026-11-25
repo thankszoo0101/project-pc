@@ -1,0 +1,215 @@
+@charset "UTF-8";
+.line_map strong{color: var(--color-main); font-weight: 700;}
+.content_area {
+    width: 1400px;              /* sub3_common.css에 이미 있으면 지워도 됨 */
+    margin: 0 auto;
+    padding: 60px 0 150px;      /* 위 60px: title_area와 간격 / 아래 150px: 푸터와 간격 */
+    word-break: keep-all;       /* 낱말 중간에서 줄바꿈되지 않게 (조직문/화 → 조직문화) */
+}
+.content_area section {
+    margin-bottom: 100px;
+}
+
+.content_area section:last-child {
+    margin-bottom: 100px;
+}
+
+/* 섹션 제목 h3 : 왼쪽 빨간 막대 */
+.content_area section h3 {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    font-size: var(--font-h6-size);
+    font-weight: 700;
+    color: var(--color-font1);
+}
+
+.content_area section h3::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 4px;
+    height: 45px;
+    background: var(--color-main);
+}
+
+.content_area section h3 span {     /* (2025년) */
+    margin-left: 10px;
+    font-size: var(--font-sub-size);
+    font-weight: 400;
+    color: var(--color-font1);
+}
+
+/* ---------- 맨 위 문구 + 이미지 ---------- */
+.content_area > p {
+    margin: 0 0 60px;
+    text-align: center;
+    font-size: var(--font-24-size);
+    color: var(--color-font1);
+}
+
+.content_area > p span {            /* kidp */
+    font-weight: 800;
+    color: var(--color-main);
+}
+
+.content_area > div {               /* 이미지를 감싼 div */
+    margin-bottom: 100px;
+}
+
+.content_area > div img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+
+/* ---------- 1. 사회적가치 비전 (.value) ---------- */
+.value p {
+    margin: 0;
+    margin-bottom: 150px;
+    padding: 44px 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow1);
+    text-align: center;
+    font-size: var(--font-24-size);
+    font-weight: 700;
+    color: var(--color-font1);
+}
+
+
+/* ---------- 2. 기본방향 및 목표 (.goal) ---------- */
+.goal ul {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 150px;
+}
+
+.goal li {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;               /* 아래 빨간 띠 모서리를 li 모양대로 자름 */
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow1);
+    text-align: center;
+    transition: transform 0.3s , box-shadow 0.3s;
+}
+.goal li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);   /* 진한 그림자 */
+}
+
+.goal li i,
+.goal li svg {                      /* 위쪽 아이콘 */
+    display: block;
+    margin: 0 auto;                 /* 좌우 자동 = 가운데 */
+    padding-top: 36px;
+    font-size: var(--font-24-size);
+    color: var(--color-main);
+}
+
+.goal li strong {                   /* 기본방향 제목 */
+    display: block;
+    flex: 1;                        /* 제목 줄 수가 달라도 빨간 띠는 항상 맨 아래 */
+    padding: 14px 20px 34px;
+    font-size: var(--font-sub-size);
+    line-height: 1.6;
+    color: var(--color-font1);
+}
+
+.goal li span {                     /* 목표 (빨간 띠) */
+    display: block;
+    padding: 26px 0;
+    background: var(--color-main);
+    font-size: var(--font-sub-size);
+    color: #fff;
+}
+
+.goal > i,
+.goal > svg {                       /* 아래쪽 ︽ 화살표 */
+    display: block;
+    margin: 36px auto 0;            /* 위 36px, 좌우 자동, 아래 0 */
+    font-size: var(--font-h3-size);
+    color: var(--color-main);       /* #DE2718도 root 색으로 */
+}
+
+
+/* ---------- 3. 추진전략 및 전략과제 (.txt_list) ----------
+   선생님 방식
+   li  : 흰 배경 + position: relative   → dt를 붙일 기준점
+   dt  : position: absolute + top / left → 왼쪽에 둥둥 띄워서 붙임
+   dl  : padding-left                    → dt 자리만큼 오른쪽으로 밀어냄
+   --------------------------------------------------- */
+.txt_list li {
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;               /* dt 분홍 배경이 li 둥근 모서리 밖으로 안 나가게 */
+    background: #fff;
+    border: 1px solid #F1D1CE;
+    border-radius: 10px;
+}
+
+.txt_list li:last-child {
+    margin-bottom: 0;
+}
+
+.txt_list dl {
+    display: flex;                  /* 추가 */
+    flex-direction: column;         /* 추가 : dd를 세로로 쌓음 */
+    box-sizing: border-box;
+    min-height: 180px;
+    padding: 0 40px 0 400px;        /* 위아래 20px → 0 */
+}
+
+.txt_list dt {
+    position: absolute;
+    top: 0;                         /* ?px : 위에서 얼마나 띄울지 */
+    left: 0;                        /* ?px : 왼쪽에서 얼마나 띄울지 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 400px;
+    height: 100%;
+    padding: 30px 40px;
+    background: #FDE9E7;
+    font-size: var(--font-sub-size);
+    font-weight: 700;
+    line-height: 1.6;
+    color: var(--color-font1);
+}
+
+.txt_list dt span {                 /* 위쪽 작은 빨간 글자 */
+    display: block;
+    margin-bottom: 10px;
+    font-size: var(--font-gnb-size);
+    color: var(--color-main);
+}
+
+.txt_list dd {
+flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 18px 0;
+    border-bottom: 1px solid #E5E5E5;
+    font-size: var(--font-sub-size);
+    line-height: 1.4;
+    color: var(--color-font1);
+}
+
+.txt_list dd:last-child {
+    border-bottom: 0;
+}
+
+.txt_list dd i,
+.txt_list dd svg {                  /* > 화살표 */
+    flex-shrink: 0;
+    font-size: var(--font-16-size);
+    color: var(--color-main);
+    margin-left: 30px;
+}

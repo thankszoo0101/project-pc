@@ -1,0 +1,204 @@
+@charset "UTF-8";
+/* 연혁 페이지 콘텐츠 전체의 가로 폭과 하단 여백 */
+.history_content{
+    width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 180px;
+}
+.line_map strong{color: var(--color-main); font-weight: 700;}
+
+
+/* [Design update] Center the opening image and round its corners. */
+/* 연혁 상단의 대표 이미지 영역: 가운데 배치와 둥근 모서리 */
+.history_feature{
+    width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 52px;
+}
+/* 대표 이미지가 부모 영역 너비에 맞게 표시되도록 설정 */
+.history_feature img{
+    display: block;
+    width: 100%;
+}
+
+/* [Design update] Pill-shaped period navigation. */
+/* 연도별 이동 탭 전체: 가로 정렬, 빨간 테두리, 둥근 pill 모양 */
+.history_nav{
+    display: flex;
+    margin: 70px auto 0;
+    overflow: hidden;
+    border: 1px solid var(--color-main);
+    border-radius: 999px;
+}
+/* 각 탭이 같은 너비를 차지하도록 설정 */
+.history_nav li{
+    flex: 1;
+}
+/* 탭 링크의 글자 정렬, 크기, 여백 */
+.history_nav a{
+    display: block;
+    padding: 10px 0;
+    color: var(--color-font1);
+    font-size: var(--font-h6-size);
+    font-weight: 700;
+    text-align: center;
+}
+/* 현재 선택된 탭의 배경색과 글자색 */
+/* .history_nav a.active{
+    background: var(--color-main);
+    color: #fff;
+} */
+
+/* 상단에 고정 sticky menu */
+#content .navOn{position: fixed; width: 100%;z-index:100; left:0; top: 0;
+       background: #fff; border-bottom: 1px solid #ccc;
+       padding: 10px 0;}
+#content .navOn ul{margin: 0 auto; padding: 0; width: 1200px;}
+#content .navOn ul a{font-size: 1.3rem;}
+
+/* 메뉴 활성화  scroll spy */
+.navBox ul li a.spy{
+    background: var(--color-main); color: #fff;      
+}
+
+
+/* [Design update] Central vertical rule and alternating two-column timeline. */
+/* 연도별 연혁 목록 전체를 감싸는 타임라인 영역 */
+.history_timeline{
+    position: relative;
+    margin-top: 105px;
+}
+/* 타임라인 중앙에 표시되는 회색 세로선 */
+.history_timeline::before{
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 50%;
+    width: 1px;
+    background: #cfcfcf;
+    content: "";
+}
+/* 각 연도 구간의 2단 배치와 연도 사이 간격 */
+.history_timeline .period_left,
+.history_timeline .period_right{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 340px;
+    margin-bottom: 112px;
+    padding-top: 54px;
+    
+}
+/* 마지막 연도 구간에는 아래쪽 간격을 없앰 */
+.history_timeline section:last-child{
+    margin-bottom: 0;
+}
+/* 각 연도 제목(2010's 등)의 위치와 글자 스타일 */
+.history_timeline section h3{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    margin-bottom: 30px;
+    color: var(--color-font1);
+    font-size: var(--font-h3-size);
+    font-weight: 800;
+    line-height: 1.8;
+}
+/* 연도 제목 옆, 중앙선 위에 놓이는 원형 표시 */
+.history_timeline section h3::after{
+    position: absolute;
+    top: 50%;
+    left: -33px;
+    width: 11px;
+    height: 11px;
+    box-sizing: border-box;
+    border: 2px solid var(--color-main);
+    border-radius: 50%;
+    background: #fff;
+    content: "";
+    transform: translateY(-50%);
+}
+/* 왼쪽 목록 구간의 연도 제목을 중앙선 왼쪽에 배치 */
+.history_timeline .period_left h3{
+    right: calc(50% + 28px);
+    text-align: right;
+}
+/* 왼쪽 연도 제목의 원형 표시 위치 */
+.history_timeline .period_left h3::after{
+    left: calc(100% + 23px);
+}
+/* 오른쪽 목록 구간의 연도 제목을 중앙선 오른쪽에 배치 */
+.history_timeline .period_right h3{
+    left: calc(50% + 28px);
+}
+/* 오른쪽 연도 제목의 원형 표시 위치 */
+.history_timeline .period_right h3::after{
+    right: calc(100% + 24px);
+}
+
+.history_timeline section:last-child{position: relative;}
+.history_timeline section:last-child::after{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 11px;
+    height: 11px;
+    box-sizing: border-box;
+    border: 2px solid var(--color-main);
+    background: var(--color-main) ;
+    border-radius: 50%;
+    content: "";
+    margin-left: -5px;
+}
+
+
+/* 각 연도의 세부 연혁 문장 목록 영역 */
+.history_timeline .list{
+    padding-top: 8px;
+    color: var(--color-font1);
+    
+}
+/* 목록 앞 기본 점(bullet)을 제거 */
+.history_timeline .list ul{
+    list-style: none;
+    margin-top: 50px;
+}
+/* 세부 연혁 문장의 글자 크기와 줄 간격 */
+.history_timeline .list li{
+    font-size: var(--font-sub-size);
+    line-height: 1.7;
+    word-break: keep-all;
+}
+/* 왼쪽 구간: 목록을 왼쪽 칸에 두고 오른쪽 정렬 */
+.history_timeline .period_left .list{
+    width: 662px;
+    text-align: right;
+}
+/* 오른쪽 구간: 목록을 오른쪽 칸에 두고 왼쪽 정렬 */
+.history_timeline .period_right{
+    flex-direction: row-reverse;
+}
+.history_timeline .period_right .list{
+    width: 662px;
+    text-align: left;
+}
+/* 각 연도의 사진 영역: 목록 높이를 기준으로 세로 가운데 정렬 */
+.history_timeline .photo{
+    width: 662px;
+}
+/* 왼쪽 목록 구간: 사진을 오른쪽 칸에 배치 */
+/* 오른쪽 목록 구간: 사진을 왼쪽 칸에 배치 */
+/* 사진이 사진 영역의 너비에 맞게 보이도록 설정 */
+.history_timeline .photo img{
+    display: block;
+    width: 100%;
+}
+/* 사진 아래 설명 문구의 크기와 가운데 정렬 */
+.history_timeline .photo p{
+    margin-top: 8px;
+    color: #999;
+    font-size: var(--font-slogan-size);
+    text-align: center;
+}

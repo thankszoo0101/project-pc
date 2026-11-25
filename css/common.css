@@ -1,0 +1,114 @@
+@charset "UTF-8";
+/* 전체 페이지 공통 css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto:wght@100..900&display=swap');
+/* font-family: "Noto Sans KR", sans-serif; */
+/* font-family: "Roboto", sans-serif; */
+
+:root {
+    --color-main: #DE2718;
+    --color-point1: #030027;
+    --color-point2: #221814;
+    --color-sub1: #DEDEDE;
+    --color-sub2: #E2D4BA;
+    --color-font1: #333;
+    --color-font2: #666;
+    --color-font3: #999;
+    --font-h2-size: 3.75rem; /* 60px */
+    --font-h3-size: 3.13rem; /* 50px */
+    --font-h4-size: 2.50rem; /* 40px */
+    --font-h5-size: 2.19rem; /* 35px */
+    --font-h6-size: 1.88rem; /* 30px */
+    --font-sub-size: 1.38rem; /* 22px */
+    --font-gnb-size: 1.25rem; /* 20px */
+    --font-slogan-size: 1.13rem; /* 18px */
+    --font-24-size: 1.50rem; /* 24px */
+    --font-16-size: 1rem; /* 16px */ 
+    --font-14-size: 0.88rem; /* 14px */
+    --font-12-size: 0.75rem; /* 12px */
+    --box-shadow1: 1px 1px 8px 1px rgba(0, 0, 0, .1);
+    --box-shadow2: 1px 1px 10px 1px rgba(0, 0, 0, .4);
+}
+
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+/* reset */
+* { margin: 0; padding: 0; }
+html { font-size: 16px;}
+body { font-family: "Noto Sans KR", sans-serif; color: #333; }
+a { color: #333; text-decoration: none; display: block; }
+ol, ul { list-style: none; }
+table { border-collapse: collapse; }
+address { font-style: normal; }
+img { border: 0; vertical-align: top; }
+.hidden { position: absolute; left: -1000%; top: 0; display: block; width: 1px; height: 1px; overflow: hidden; color: #fff; }
+
+#skipNav { position: fixed; left: 0; top: 0; width: 100%; overflow: hidden; z-index: 110; }
+#skipNav a { height: 1px; margin-bottom: -1px; overflow: hidden; text-align: center; color: #fff; font-size: 1.2rem; font-weight: 700; }
+#skipNav a:focus { height: auto; padding: 10px 0; background: var(--color-main); }
+#wrap { width: 100%; overflow: hidden; }
+
+/* 공통 헤더 영역 */
+#headerArea { width: 100%; position: fixed; z-index: 100; background: rgba(255, 255, 255, .6); backdrop-filter: blur(8px); border: 1px solid #ccc; box-shadow: 0 0 8px 0 rgba(0,0,0,.2); transition: background .3s ease-out; }
+#headerArea .header_inner { width: 1400px; height: 143px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; position: relative; }
+#headerArea .logo { margin: 20px 0 25px; }
+#headerArea .logo a { width: 234px; height: 40px; background: url(../images/logo.png) no-repeat; text-indent: -9999px; overflow: hidden; }
+#headerArea .top_menu { display: flex; gap: 15px; position: absolute; right: 50px; top: 30px; }
+#headerArea #gnb { width: 1400px; }
+#headerArea #gnb .dropdownmenu { width: 100%; display: flex; }
+#headerArea #gnb .dropdownmenu .menu { position: relative; width: 16.666%; }
+#headerArea #gnb .dropdownmenu li .depth1 { padding: 15px 0; color: var(--color-font1); text-align: center; transition: all .5s; position: relative; font-size: 1.17rem;}
+#headerArea #gnb .dropdownmenu li .depth1::after { content: ''; display: block; width: 60%; position: absolute; height: 3px; background: var(--color-main); bottom: 0; left: 20%; transform: scaleX(0); transition: all .3s ease-out; }
+#headerArea #gnb .dropdownmenu li .active::after { transform: scaleX(1); }
+
+/* 2depth */
+#headerArea #gnb .dropdownmenu li ul { width: 100%; height: 160px; position: absolute; top: 57px; left: 0; padding: 15px 0; display: none; }
+#headerArea #gnb ul.dropdownmenu ul li { text-align: center; font-weight: bold; }
+#headerArea #gnb ul.dropdownmenu ul li a { padding: 7px 0; color: var(--color-font1); transition: all .5s; font-size: 1rem;}
+#headerArea #gnb ul.dropdownmenu ul li a:hover { color: #fff; background: var(--color-main); border-radius: 5px; }
+
+/* 공통 푸터 영역 */
+#footerArea { width: 100%; background: #f8f8f8; color: var(--color-font1); border-top: 1px solid var(--color-sub1); }
+#footerArea .footer_inner { width: 1400px; margin: 0 auto; padding: 50px 0 30px; }
+
+/* 푸터 상단: 로고/주소 - SNS/관련사이트 */
+#footerArea .footer_top { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 30px; }
+#footerArea .footer_top_left img { height: 26px; margin-bottom: 15px; }
+#footerArea .footer_top_left address { font-size: var(--font-16-size); line-height: 1.9; color: var(--color-font2); }
+#footerArea .footer_top_right { display: flex; flex-direction: column; align-items: flex-end; gap: 20px; }
+#footerArea .footer_sns { display: flex; gap: 20px; }
+#footerArea .footer_sns li a { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-sub1); border-radius: 8px; color: var(--color-font1); transition: all .3s ease-out; }
+#footerArea .footer_sns li a:hover { background: var(--color-main);  color: #fff; }
+#footerArea .footer_site { width: 220px; padding: 15px; border: 1px solid var(--color-sub1); border-radius: 8px; }
+#footerArea .footer_site p { font-size: var(--font-slogan-size); font-weight: 600; margin-bottom: 10px; text-align: center; }
+
+#footerArea .footer_site .select { width: 100%; border: 1px solid var(--color-sub1); border-radius: 5px; position: relative; }
+#footerArea .footer_site .select .arrow{ display:block; font-size:1rem; padding: 10px 0;
+    text-align: center; transition: all 1s;}
+#footerArea .footer_site .select .arrow i{font-size:.6rem ; color: red;}
+#footerArea .footer_site .select .arrow:hover{background: var(--color-main); color:#f8f8f8;}
+#footerArea .footer_site .select .aList{ position:absolute; top:45px; left:-1px; width:220px; 
+    border:1px solid #ccc; display:none}
+#footerArea .footer_site .select .aList li{ line-height:1.5rem; border-bottom:1px solid #ccc; background: #fff;}
+#footerArea .footer_site .select .aList li a{display:block;text-align: center; padding: 5px 0; transition: all 1s;}
+#footerArea .footer_site .select .aList li a:hover{background: var(--color-main); color: #f8f8f8;}
+
+
+
+
+
+/* 푸터 하단: 정책 링크 - 카피라이트 */
+#footerArea .footer_bottom { display: flex; flex-direction: column; align-items: center; gap: 20px; padding-top: 25px; border-top: 1px solid var(--color-sub1); }
+#footerArea .footer_bottom ul { display: flex; gap: 20px; font-size: var(--font-16-size); color: var(--color-font2); }
+#footerArea .footer_bottom p { font-size: var(--font-12-size); color: var(--color-font3); }
+.footer_bottom span { color: var(--color-main); font-weight: 700; }
+#footerArea .top_move { width: 80px; height: 80px; border-radius: 50%; background: var(--color-main); color: #fff; font-weight: 700; position: fixed; bottom: 150px; left: 50%; z-index: 90; margin-left: 750px; box-shadow: var(--box-shodow2); display: none;transition: all .5s ease-out; }
+#footerArea .top_move:hover { background: #fff; color: var(--color-main);box-shadow: 1px 1px 10px 1px rgba(0,0,0,.3); }
+#footerArea .top_move span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* 패밀리사이트 선택 리스트  */

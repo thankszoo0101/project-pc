@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기관소개:CI</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <script src="https://kit.fontawesome.com/e3752a996c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/aos.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="./css/sub1_common.css">
+    <link rel="stylesheet" href="./css/sub1_3.css">
+    <script src="../images/icon.ico"></script>
+</head>
+<body>
+    <div id="skipNav">
+        <a href="#content">본문바로가기</a>
+        <a href="#gnb">네비게이션바로가기</a>
+    </div>
+    <div id="wrap">
+        <header id="headerArea">
+            
+        </header>
+        <div class="visual">
+            <img src="./images/common/sub_visual.jpg" alt="">
+            <strong class="hidden">기관소개</strong>
+        </div>
+        <div class="sub_nav">
+            <ul>
+                <li><a href="./sub1_1.html">인사말</a></li>
+                <li><a href="./sub1_2.html">연혁</a></li>
+                <li><a class="active" href="./sub1_3.html">CI</a></li>
+                <li><a href="./sub1_4.html">오시는길</a></li>
+            </ul>
+        </div>
+        <main id="content">
+            <article>
+                <div class="title_area">
+                    <div class="line_map">
+                        HOME &gt; 기관소개 &gt; <strong>CI</strong>
+                    </div>
+                    <h2><span>Corporate Identity</span>CI</h2>
+                    <p>한국디자인진흥원만의 색으로, 기관의 전문성을 완성합니다.</p>
+                </div>
+                <!-- 실제 페이지의 내용 부분 -->
+                <div class="content_area">
+                    <section class="signature_sec">
+                        <h3 class="hidden">심볼마크</h3>
+
+                        <div class="signature_top">
+                            <span class="signature_tit">
+                                <strong>시그니처</strong>
+                                signiture
+                            </span>
+                            <div class="signature_txt">
+                                <p>
+                                    한국디자인진흥원을 상징하는 대표적인 시각물로서 C.I.S의 핵심적인 기본요소입니다.<br>
+                                    아래에서 제시된 심볼과 로고타입의 조합기준 사례는 심볼과 로고타입간의 간격표시와 비례를 보이기 위한 예입니다.<br>
+                                    이를 준수함을 원칙으로 하며 제시된 원칙이외의 임의로 변경된 조합의 사용을 금합니다.
+                                </p>
+                            </div>
+                        </div>
+                        <ul class="signature_list">
+                            <li>
+                                <img src="./images/sub1/kor01.jpg" alt="kidp 한국디자인진흥원 국문형 로고">
+                                <span>국문형</span>
+                            </li>
+                            <li>
+                                <img src="./images/sub1/kor02.jpg" alt="kidp 한국디자인진흥원 국영문형 로고">
+                                <span>국영문형</span>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="color_sec">
+                        <h3>KIDP Color System</h3>
+                        <ul class="color_list">
+                            <li>
+                                <span class="color_box red"></span>
+                                <div class="color_info">
+                                    <strong>KIDP Red</strong>
+                                    <span>R 222 G 39 B 24</span>
+                                    <span>#DE2718</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="color_box black"></span>
+                                <div class="color_info">
+                                    <strong>KIDP Black</strong>
+                                    <span>R 34 G 24 B 20</span>
+                                    <span>#221814</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </article>
+        </main>
+
+        <!-- 푸터영역 -->
+        <footer id="footerArea">
+            
+        </footer>
+    </div>
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/jquery-migrate-1.4.1.min.js"></script>
+    <script>
+        $('#headerArea').load('../common/sub_header.html',function(){
+            //function(){} ->main_header.html의 로드가 완료가 되면..
+            $.getScript('../js/fullnav.js'); //스크립트 js 파일을 동작시키는 메소드
+        });
+        $('#footerArea').load('../common/sub_footer.html',function(){
+            $.getScript('../js/select.js');
+        });
+    </script>
+    <script src="./aos.js"></script>
+    <script>
+    AOS.init({
+      easing: 'ease-in-out-sine'
+    });
+  </script>
+</body>
+
+</html>

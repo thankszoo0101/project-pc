@@ -1,0 +1,326 @@
+@charset "UTF-8";
+.line_map strong{color: var(--color-main); font-weight: 700;}
+
+.content_area {
+    width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 150px;
+}
+
+#content .content_area section {
+    margin-bottom: 100px;
+}
+
+#content .content_area section:last-child {
+    margin-bottom: 0;
+}
+
+/* 섹션 제목 h3 : 왼쪽 빨간 막대 (sub2_2, sub2_3과 동일한 고정값 방식) */
+.content_area section h3 {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 50px;
+    font-size: var(--font-h6-size);
+    font-weight: 700;
+    color: var(--color-font1);
+    margin-bottom: 50px;
+}
+
+.content_area section h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 4px;
+    height: 45px;
+    background-color: var(--color-main);
+}
+
+
+/* ============================
+   01. purpose (경영방침 소개)
+============================ */
+.content_area .purpose {
+    box-sizing: border-box;
+    width: 1000px;
+    display: flex;
+    gap: 50px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow1);
+}
+
+.content_area .purpose h3 {
+    width: 250px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    padding-left: 0;      /* 빨간 막대 없앤 만큼 여백도 같이 제거 */
+    line-height: 1.6;
+}
+
+/* purpose h3는 빨간 막대 제거 (예외 처리) */
+.content_area .purpose h3::before {
+    content: none;
+}
+
+.content_area .purpose p {
+    width: 620px;
+    font-size: var(--font-gnb-size);
+    line-height: 1.8;
+    color: var(--color-font1);
+}
+.content_area .purpose p mark {
+    background: linear-gradient(transparent 60%, #F8D6D2 60%);
+    color: inherit;
+}
+
+/* ============================
+   02. goal (안전보건 경영목표)
+============================ */
+.content_area .goal {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.content_area .goal > p {
+    width: 1000px;
+    margin: 0 auto 60px;
+    text-align: center;
+    font-size: 26px;
+    color: var(--color-font1);
+}
+
+.content_area .goal > p span {
+    color: var(--color-main);
+    font-weight: 900;
+}
+
+/* 카드 4개 : 1200px 안에서 정확히 4등분 (20px 간격 3개 제외) */
+/* height → min-height : 글이 길면 카드가 같이 늘어나서 글자가 밖으로 안 튀어나옴 */
+.content_area .goal > ul {
+    display: flex;
+    gap: 20px;
+    width: 1200px;
+    min-height: 280px;
+    margin: 0 auto 60px;
+}
+
+.content_area .goal li {
+    box-sizing: border-box;
+    width: 285px;
+    min-height: 280px;
+    padding: 40px 20px;
+    background: #fff;
+    border: 1px solid var(--color-sub1);
+    border-radius: 10px;
+    text-align: center;
+    transition: all .3s ease;   /* hover 시 부드럽게 커지도록 */
+}
+
+.content_area .goal li:hover {
+    transform: scale(1.1);
+    box-shadow: var(--box-shadow1);
+}
+
+.content_area .goal dt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: var(--font-gnb-size);
+    font-weight: 700;
+    color: var(--color-font1);
+}
+
+/* 접시(동그라미) : 동그라미 크기는 여기서만 조절 */
+.content_area .goal dt .icon_circle {
+    display: flex;
+    align-items: center;        /* 아이콘을 세로 가운데로 */
+    justify-content: center;    /* 아이콘을 가로 가운데로 */
+    width: 80px;                /* 동그라미 가로 */
+    height: 80px;               /* 동그라미 세로 */
+    margin-bottom: 16px;
+    border-radius: 50%;
+    background-color: #F1D1CE;
+    color: var(--color-main);   /* 아이콘 색 */
+}
+
+/* 스티커(아이콘) : 아이콘 크기는 여기서만 조절 */
+.content_area .goal dt .icon_circle i,
+.content_area .goal dt .icon_circle svg {
+    width: auto;
+    height: 40px;               /* 아이콘 크기 */
+    font-size: 40px;            /* i 상태일 때를 위한 값 (height와 같은 숫자로 맞추기) */
+    line-height: 1;
+}
+
+.content_area .goal dd {
+    font-size: var(--font-18-size);
+    /* line-height: 1.6; */
+    color: var(--color-font1);
+    text-align: justify;
+}
+
+/* 서명 영역 */
+.content_area .goal > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-top: 1px solid var(--color-sub1);
+    font-size: var(--font-sub-size);
+    color: var(--color-font1);
+}
+
+.content_area .goal > div strong {
+    font-weight: 700;
+}
+
+.content_area .goal > div img {
+    width: 100px;
+    height: 60px;
+}
+
+
+/* ============================
+   03. state (ISO 인증 현황)
+============================ */
+.content_area .state {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+/* 고정 height 삭제 : 내용(이미지+버튼)만큼 섹션이 늘어나서 푸터와 안 붙음 */
+.content_area .state > div {
+    display: flex;
+    align-items: flex-start;   /* 위쪽 기준으로 나란히 */
+    width: 1100px;
+    margin: 0 auto;
+    gap: 80px;                 /* 목록과 이미지 사이 간격 */
+}
+
+/* 왼쪽 텍스트 리스트 (인증기관/인증표준/등록번호 등 5줄) : 높이를 이미지와 똑같이 */
+.content_area .state > div > ul:first-child {
+    width: 460px;
+    height: 385px;             /* 이미지 높이와 같은 값 */
+}
+
+.content_area .state > div > ul:first-child li {
+    box-sizing: border-box;
+    width: 460px;
+    height: 77px;              /* 385px ÷ 5줄 = 77px */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;                 /* 글자끼리 붙지 않게 */
+    padding: 0 10px;
+    border-bottom: 1px solid var(--color-sub1);
+    font-size: var(--font-sub-size);
+    color: var(--color-font1);
+}
+
+/* 오른쪽 인증서 이미지 2개 */
+.content_area .state > div > ul:last-child {
+    display: flex;
+    gap: 16px;
+    width: 560px;
+}
+
+.content_area .state > div > ul:last-child li {
+    box-sizing: border-box;
+    width: 272px;
+}
+
+.content_area .state > div > ul:last-child img {
+    display: block;
+    width: 272px;
+    height: 385px;
+    object-fit: cover;
+    background-color: var(--color-sub1);
+    margin-bottom: 16px;
+}
+
+.content_area .state > div > ul:last-child a {
+    display: block;
+    box-sizing: border-box;
+    width: 272px;
+    height: 34px;
+    line-height: 32px;
+    text-align: center;
+    background: #fff;
+    color: var(--color-font1);
+    border: 1px solid var(--color-sub1);
+    border-radius: 20px;
+    font-size: var(--font-gnb-size);
+    transition: all .3s ease-out;   /* hover 시 색이 서서히 바뀌도록 */
+}
+
+.content_area .state > div > ul:last-child a:hover {
+    background: var(--color-main);
+    color: #fff;
+    border-color: var(--color-main);
+}
+
+
+/* ============================
+   04. 확대보기 팝업 (인증서 크게 보기)
+============================ */
+/* 뒤를 어둡게 덮는 판 */
+.cert_modal {
+    display: none;            /* 처음엔 숨김 (JS가 열어줌) */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .7;
+    z-index: 9998;            /* 헤더보다 위에 오도록 크게 */
+}
+
+/* 가운데 뜨는 팝업창 */
+.cert_popup {
+    display: none;            /* 처음엔 숨김 (JS가 열어줌) */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   /* 화면 정가운데로 */
+    box-sizing: border-box;
+    width: 600px;
+    max-height: 90vh;         /* 화면보다 길면 팝업 안에서 스크롤 */
+    overflow-y: auto;
+    padding: 50px 20px 20px;  /* 위쪽은 닫기 버튼 자리 */
+    background: #fff;
+    box-shadow: var(--box-shadow1);
+    z-index: 9999;
+}
+
+.cert_popup img {
+    display: block;
+    width: 100%;
+}
+
+.cert_popup p {
+    margin-top: 12px;
+    text-align: center;
+    font-size: var(--font-sub-size);
+    font-weight: 700;
+    color: var(--color-font1);
+}
+
+/* 닫기(X) 버튼 : cancel.png 사용 */
+.cert_popup .cert_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    text-indent: -999px;      /* '닫기' 글자는 화면 밖으로 치움 */
+    background: url(../images/sub3/cancel.png) no-repeat center;
+}

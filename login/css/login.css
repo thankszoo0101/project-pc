@@ -1,0 +1,25 @@
+body{background-color: #eee; font-size: 16px;}
+h1 a{margin: 50px auto 0; display: block; width: 234px; height: 40px; text-indent: -9999px; overflow: hidden;
+    background: url(../../images/logo.png) center no-repeat; }
+#content{width: 400px; margin: 50px auto; background: #fff;border-radius: 10px;
+     padding: 50px 80px; font-family: 'Noto Sans KR', sans-serif; font-weight: 500;}
+#content h2{font-size: var(--font-h6-size); text-align: center; margin-bottom: 25px;}
+#content p{color: var(--color-font3); font-weight: 400; text-align: center;}
+#content form{margin-top: 50px;}
+#content form label{font-size: var(--font-16-size); display: block; margin-bottom: 15px;}
+#content form input{border: 2px solid #ddd; width: 100%; height: 50px; border-radius: 10px; 
+    margin-bottom: 15px; padding-left: 20px; box-sizing: border-box;}
+#content form input::placeholder{font-family: 'Noto Sans KR', sans-serif; color: #ddd;}
+
+#content form input[type=submit]{margin-top: 20px; font-family: 'Noto Sans KR', sans-serif;
+    font-size: var(--font-gnb-size); border: 0; background: var(--color-main); color: #fff; font-weight: 400; height: 60px; cursor: pointer;}
+#content form input:focus{outline-color: var(--color-main);}
+
+#content div:nth-of-type(1){margin-left: 50%; transform: translateX(-40%);}
+#content div:nth-of-type(1) a{font-weight: 400; color: var(--color-font3); display: inline;}
+#content div:nth-of-type(1) a:last-child{margin-left: 10px; position: relative;}
+#content div:nth-of-type(1) a:last-child::before{content: ''; display: block; position: absolute;
+    width: 1px; height: 50%; background: var(--color-font3); left: -8px; top: 7px;}
+#content div:nth-of-type(2){width: 100%; margin-top: 50px; margin-left: 50%; transform: translateX(-30%);}
+#content div:nth-of-type(2) span{color: var(--color-font2);}
+#content div:nth-of-type(2) a{display: inline; color: var(--color-main);}

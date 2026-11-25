@@ -1,0 +1,259 @@
+@charset "UTF-8";
+.content_area {
+    max-width: 1400px;
+    margin: 0 auto 100px;
+}
+.line_map strong{color: var(--color-main); font-weight: 700;}
+/* 상단 소개글(청년연계 K디자인 파워업 사업이란?) */
+.content_area > h3 {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 50px;
+    font-size: var(--font-h6-size);
+    font-weight: 700;
+    color: var(--color-font1);
+}
+
+/* 제목 앞 빨간 세로 막대를 ::before 가상요소로 생성 */
+.content_area > h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 4px;
+    height: 45px;
+    background-color: var(--color-main);
+}
+
+.content_area > p {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: var(--font-slogan-size);
+    line-height: 1.6;
+    color: var(--color-font1);
+}
+
+/* 소개 문단 맨 앞에 빨간 화살표(▶) 장식 추가 (실제 글자를 바꾸지 않고 CSS로만 표시) */
+.content_area > p::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: var(--color-font1);
+    font-size: var(--font-16-size);
+}
+
+/* "※구체적인 지원 대상..." 안내 문단은 화살표 없이 작은 회색 글씨로 */
+.content_area > p:last-of-type {
+    padding-left: 0;
+    font-size: var(--font-16-size);
+    color: var(--color-font2);
+}
+
+.content_area > p:last-of-type::before {
+    content: "";
+}
+
+/* ==========================================================================
+   기업 / 청년 큰 섹션(info_section)
+   ========================================================================== */
+.content_area .info_section {
+    margin-top: 100px;
+}
+
+/* 섹션 제목(기업 / 청년) : sub2_3 h3 와 같은 느낌으로 빨간 막대 + 굵은 글씨 */
+.content_area .info_section > h4 {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 50px;
+    font-size: var(--font-h6-size);
+    font-weight: 700;
+    color: var(--color-font1);
+}
+
+.content_area .info_section > h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 4px;
+    height: 40px;
+    background-color: var(--color-main);
+}
+
+/* 내용 전체를 감싸는 흰색 박스(info_box) */
+.content_area .info_box {
+    background-color: #fff;
+    border: 1px solid #f8f8f8;
+    border-radius: 10px;
+    padding: 35px 40px;
+    box-shadow: var(--box-shadow1);
+}
+.content_area .info_box strong{
+    color: var(--color-main);
+}
+
+.content_area .info_box > p {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 20px;
+    font-size: var(--font-slogan-size);
+    line-height: 1.6;
+    color: var(--color-font1);
+}
+
+/* 자격요건 문단 앞 동그라미(○) 장식 */
+.content_area .info_box > p::before {
+    content: "○";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    font-size: 15px;
+    color: var(--color-main);
+}
+
+
+/* ==========================================================================
+   info_table (기업유형 표 / 최종학력 표) 공통
+   ========================================================================== */
+.content_area .info_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.content_area .info_table thead th {
+    background-color: var(--color-main);
+    color: #fff;
+    font-size: var(--font-slogan-size);
+    font-weight: 700;
+    text-align: center;
+    padding: 14px 20px;
+}
+
+.content_area .info_table tbody th,
+.content_area .info_table tbody td {
+    padding: 16px 20px;
+    font-size: var(--font-slogan-size);
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fff;
+}
+
+.content_area .info_table tbody th {
+    text-align: center;
+    font-weight: 600;
+    font-size: var(--font-16-size);
+    color: var(--color-font1);
+    width: 220px;
+}
+
+.content_area .info_table tbody td {
+    text-align: left;
+    color: var(--color-font1);
+}
+
+/* ==========================================================================
+   note_list (청년채용 / 인위적 감원 제한 / 참여제한 / 중복제한 안내문)
+   ========================================================================== */
+.content_area .note_list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.content_area .note_list li {
+    position: relative;
+    padding-left: 20px;
+    font-size: var(--font-16-size);
+    line-height: 1.7;
+    color: var(--color-font1);
+}
+
+/* 안내문 첫 줄에만 ○ 마커를 붙임 */
+.content_area .note_list li:first-child::before {
+    content: "○";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 11px;
+    color: var(--color-main);
+}
+
+/* 두 번째 줄부터(보통 ※로 시작하는 부연설명)는 살짝 흐린 색 + 작은 글씨 */
+.content_area .note_list li:not(:first-child) {
+    padding-left: 20px;
+    font-size: var(--font-16-size);
+    color: var(--color-font3);
+}
+
+
+/* ==========================================================================
+   accordion (참여제한 / 신청제외) : <details> + <summary>
+   ========================================================================== */
+.content_area .accordion {
+    margin-top: 30px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background-color: #fafafa;
+    padding: 0 25px;
+}
+
+.content_area .accordion summary {
+    position: relative;
+    padding: 18px 60px 18px 0;
+    font-size: var(--font-16-size);
+    color: var(--color-font1);
+    cursor: pointer;        /* 마우스를 올리면 손가락 모양으로 바뀜 (클릭 가능하다는 표시) */
+    list-style: none;       /* summary 앞에 자동으로 붙는 기본 화살표 삼각형을 없앰 */
+}
+
+/* 크롬/사파리 계열 브라우저에서 자동으로 붙는 기본 화살표 아이콘 제거 */
+.content_area .accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.content_area .accordion summary strong {
+    margin-right: 10px;
+    color: var(--color-main);
+}
+
+/* "열기" 글씨 + 화살표를 오른쪽에 표시 (실제 텍스트가 아니라 CSS로만 만든 장식) */
+.content_area .accordion summary::after {
+    content: "열기 ▼";
+    position: absolute;
+    right: 0;
+    top: 18px;
+    font-size: var(--font-16-size);
+    color: var(--color-main);
+}
+
+/* details 태그가 열려있을 때(펼쳐졌을 때)만 적용되는 선택자 : [open] 은 속성 선택자 */
+.content_area .accordion[open] summary::after {
+    content: "접기 ▲";
+}
+
+.content_area .accordion[open] {
+    padding-bottom: 20px;
+}
+
+.content_area .accordion_list {
+    list-style: none;
+    padding-top: 6px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.content_area .accordion_list li {
+    position: relative;
+    padding: 8px 0 8px 16px;
+    font-size: var(--font-16-size);
+    line-height: 1.6;
+    color: var(--color-font2);
+}
+
+/* 목록 앞에 대시(–) 장식 */
+.content_area .accordion_list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: #aaa;
+}

@@ -1,0 +1,339 @@
+@charset "utf-8";
+
+/* ===== sub3_2 윤리·인권경영 ===== */
+/* sub2_3.css와 같은 규칙으로 통일 : 본문 폭 1400px, 색·글자·그림자는 root 변수 사용
+   글자 크기 순서 : h3(--font-h6-size) > 상자 제목(--font-sub-size) > 본문(--font-slogan-size) > 작은 글씨(--font-16-size) */
+
+.content_area {
+    max-width: 1400px;
+    margin: 0 auto 100px;
+    /* word-break: keep-all → 글자 중간에서 줄이 끊기지 않고 '낱말 단위'로만 줄이 바뀜 */
+    word-break: keep-all;
+}
+.line_map strong{color: var(--color-main); font-weight: 700;}
+
+/* section 사이 간격 (sub2_3과 동일) */
+.content_area section {
+    margin-bottom: 70px;
+}
+.content_area section:last-of-type {
+    margin-bottom: 0;
+}
+
+/* 소제목(h3) : 왼쪽 빨간 막대. 왼쪽 끝선이 아래 모든 상자의 왼쪽 끝선과 똑같음 */
+.content_area section > h3 {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 50px;
+    font-size: var(--font-h6-size);
+    font-weight: 700;
+    line-height: 45px; /* 막대 높이와 똑같이 → 글자가 막대 세로 가운데에 옴 */
+    color: var(--color-font1);
+}
+/* ::before : HTML에 태그를 쓰지 않고 CSS로 h3 앞에 막대를 하나 만듦 (content:"" 필수) */
+.content_area section > h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--color-main);
+}
+
+/* ===== 1. 윤리비전 ===== */
+.content_area .vision p {
+    height: 92px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow1);
+    text-align: center;
+    font-size: var(--font-24-size);
+    font-weight: 700;
+    line-height: 92px; /* 상자 높이와 똑같이 → 글자가 세로 가운데 */
+    color: var(--color-font1);
+}
+.content_area .vision span {
+    color: var(--color-main);
+    font-weight: 800;
+}
+
+/* ===== 2. 중장기 목표 ===== */
+/* display:flex : li 3개를 가로로 나란히 세움 / gap : 사이 간격 */
+.content_area .goal ul {
+    display: flex;
+    gap: 20px;
+}
+.content_area .goal li {
+    position: relative;
+    flex: 1;
+    /* min-height : 최소 높이. 글이 많아지면 상자도 같이 늘어남
+       padding-bottom 83px : 아래 빨간 띠(83px)가 들어갈 자리를 비워둠 */
+    min-height: 260px;
+    padding: 30px 20px 83px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform .3s ease-out, box-shadow .3s ease-out;
+}
+.content_area .goal li:hover {
+    transform: translateY(-8px) scale(1.04); /* 위로 8px 뜨고, 1.04배 커짐 */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18); /* 더 크고 진한 그림자 */
+    z-index: 1; /* 겹쳐도 마우스 올린 카드가 위에 오게 */
+}
+
+.content_area .goal li i,
+.content_area .goal li svg {
+    font-size: 32px;
+    line-height: 32px;
+    color: var(--color-main);
+}
+.content_area .goal li strong {
+    display: block;
+    margin-top: 12px;
+    font-size: var(--font-slogan-size);
+    font-weight: 500;
+    line-height: 1.7;
+    color: var(--color-font1);
+}
+/* 아래 빨간 띠 : li 맨 아래에 딱 붙이기 (position:absolute + bottom:0) */
+.content_area .goal li span {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 83px;
+    background-color: var(--color-main);
+    font-size: var(--font-sub-size);
+    font-weight: 700;
+    line-height: 83px;
+    color: #fff;
+}
+/* 겹화살표 : Font Awesome이 <i>를 <svg>로 바꾸므로 block + margin 좌우 auto로 가운데 정렬 */
+.content_area .goal_arrow {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 40px auto 0;
+    color: var(--color-main);
+}
+
+/* ===== 3. 추진전략 및 전략과제 ===== */
+.content_area .tactic li {
+    border: 1px solid #F4C9C4;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: var(--box-shadow1);
+    overflow: hidden;
+}
+.content_area .tactic li + li {
+    margin-top: 20px;
+}
+/* display:grid : 상자를 칸이 있는 표처럼 나눔
+   400px 1fr → 왼쪽 칸 400px, 오른쪽 칸은 남는 만큼 / 1fr 1fr → 위·아래 두 줄 똑같은 높이 */
+.content_area .tactic dl {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-template-rows: 1fr 1fr;
+    min-height: 160px;
+    margin: 0;
+}
+/* grid-row:1 / 3 → dt(분홍칸)가 위·아래 두 줄을 합쳐서 한 칸으로 씀 */
+.content_area .tactic dt {
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 36px;
+    background-color: #FDEEEC;
+    font-size: var(--font-sub-size);
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--color-font1);
+}
+.content_area .tactic dt span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: var(--font-16-size);
+    font-weight: 700;
+    color: var(--color-main);
+}
+.content_area .tactic dd {
+    display: flex;
+    align-items: center;
+    margin: 0 36px;
+    font-size: var(--font-sub-size);
+    color: var(--color-font1);
+}
+/* first-of-type : 같은 태그(dd) 중 첫 번째만 → 두 dd 사이에 회색 선 */
+.content_area .tactic dd:first-of-type {
+    border-bottom: 1px solid #e5e5e5;
+}
+.content_area .tactic dd i,
+.content_area .tactic dd svg {
+    margin-right: 16px;
+    font-size: var(--font-16-size);
+    color: var(--color-main);
+}
+
+/* ===== 4. 인권경영 기관장 메세지 ===== */
+/* 인사말 카드 : 왼쪽(빨간 칸)과 오른쪽(본문)을 grid 로 나눔. 추진전략·세 가지 약속 카드와 똑같이 400px 1fr */
+.content_area .greeting {
+    display: grid;
+    grid-template-columns: 400px 1fr; /* 왼쪽 칸 400px, 오른쪽 칸은 남는 만큼 */
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: var(--box-shadow1);
+    overflow: hidden; /* 둥근 모서리 밖으로 빨간 칸이 삐져나오지 않게 잘라냄 */
+}
+
+/* 왼쪽 빨간 칸 : 큰 따옴표 + 핵심 문장 */
+.content_area .greeting_quote {
+    display: flex;
+    flex-direction: column; /* 자식(따옴표, 문장)을 위에서 아래로 쌓음 */
+    justify-content: center; /* 세로 가운데 */
+    gap: 28px; /* 따옴표와 문장 사이 간격 */
+    padding: 56px 48px;
+    background-color: var(--color-main);
+    color: #fff;
+}
+.content_area .greeting_quote i,
+.content_area .greeting_quote svg {
+    display: block;
+    font-size: 72px;
+    line-height: 1;
+    /* rgba(흰색, 0.45) : 흰색을 45%만 진하게 → 연한 장식 느낌 (마지막 숫자가 투명도) */
+    color: rgba(255, 255, 255, 0.45);
+}
+.content_area .greeting_quote p {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+.content_area .greeting_quote em {
+    font-size: 42px;
+    font-style: normal; /* em 은 원래 기울어지는 태그라서 기울임을 끔 */
+    font-weight: 800;
+}
+
+/* 오른쪽 본문 : 문단 4개를 세로로 쌓고 문단 사이 간격을 줌 */
+.content_area .greeting_text {
+    position: relative; /* 안의 닫는 따옴표(position:absolute)가 이 칸을 기준으로 자리 잡음 */
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* 문단과 문단 사이 간격 */
+    padding: 56px 72px 90px;
+}
+.content_area .greeting_text p {
+    font-size: var(--font-sub-size);
+    font-weight: 400;
+    line-height: 1.85;
+    color: var(--color-font1);
+}
+/* first-of-type : 같은 태그(p) 중 첫 번째만 → 인사말 한 줄만 크고 굵게 */
+.content_area .greeting_text p:first-of-type {
+    font-size: var(--font-24-size);
+    font-weight: 700;
+    line-height: 1.7;
+}
+/* 빨간 포인트 낱말 */
+.content_area .greeting_text strong {
+    font-weight: 700;
+    color: var(--color-main);
+}
+/* mark : 형광펜 효과. 기본 노란 배경을 새로 칠하고, linear-gradient 로 글자 아래쪽 38%만 연분홍으로 칠함
+   (transparent 62% → 위쪽 62%는 투명, #FCE8E6 62% → 그 아래부터 분홍) */
+.content_area .greeting_text mark {
+    padding: 0 4px;
+    font-weight: 700;
+    color: inherit; /* mark 기본 글자색 대신 부모 글자색을 그대로 사용 */
+    background: linear-gradient(transparent 62%, #FCE8E6 62%);
+}
+/* 닫는 따옴표 : 오른쪽 아래 구석에 연하게 (opacity : 0=투명 ~ 1=선명) */
+.content_area .greeting_text i,
+.content_area .greeting_text svg {
+    position: absolute;
+    right: 56px;
+    bottom: 30px;
+    font-size: 72px;
+    line-height: 1;
+    color: var(--color-main);
+    opacity: 0.28;
+}
+
+/* 세 가지 약속 */
+.content_area .message ul {
+    margin-top: 50px;
+}
+.content_area .message li {
+    border: 1px solid #F4C9C4;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: var(--box-shadow1);
+    overflow: hidden;
+}
+.content_area .message li + li {
+    margin-top: 20px;
+}
+.content_area .message dl {
+    display: grid;
+    grid-template-columns: 400px 1fr; /* 왼쪽(제목) 400px + 오른쪽(설명) 나머지 → 추진전략과 똑같이 */
+    min-height: 180px;
+    margin: 0;
+}
+.content_area .message dt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 36px;
+    background-color: #FCE8E6;
+    font-size: var(--font-sub-size);
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--color-font1);
+}
+.content_area .message dt span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: var(--font-16-size);
+    font-weight: 700;
+    color: var(--color-main);
+}
+.content_area .message dd {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 20px 44px;
+    font-size: var(--font-slogan-size);
+    line-height: 1.8;
+    color: var(--color-font2);
+}
+
+/* 마무리 */
+.content_area .closing {
+    margin-top: 90px;
+    text-align: center;
+}
+.content_area .closing h4 {
+    font-size: var(--font-24-size);
+    font-weight: 700;
+    color: var(--color-font1);
+}
+.content_area .closing p {
+    margin-top: 30px;
+    font-size: var(--font-slogan-size);
+    line-height: 1.6;
+    color: var(--color-font1);
+}
+.content_area .closing .sign {
+    margin-top: 90px;
+}
+/* 서명 이미지 : 글자 옆에 붙이고, 높이를 고정해서 줄 높이가 늘어나지 않게 함 */
+.content_area .closing .sign img {
+    height: 59px;
+    margin-left: 12px;
+    vertical-align: middle;
+}

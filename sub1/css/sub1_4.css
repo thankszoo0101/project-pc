@@ -1,0 +1,183 @@
+@charset "UTF-8";
+/* 오시는길 본문 영역 */
+#content .content_area #map1,
+#content .content_area #map2{
+    width: 1200px;
+    height: 600px;
+    background-color: #E4E4E4;
+    border: 5px solid #f8f8f8;
+    border-radius: 8px;
+    margin: 0 auto 40px;
+}
+.line_map strong{color: var(--color-main); font-weight: 700;}
+/* 오시는길 본문 영역 전체를 가운데로 */
+#content .content_area {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+
+
+/* 여기서부터 코드 시작 */
+/* ===== 성남/양산 버튼 ===== */
+.content_area .location_tab ul{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 150px;
+}
+
+.location_tab a {
+    display: block;
+    padding: 14px 32px;
+    border-radius: 30px;
+    border: 1px solid #D9D9D9;
+    background-color: #fff;
+    color: #333;
+    font-size: var(--font-slogan-size);
+    font-weight: 600;
+    text-align: center;
+    transition: all .5s ease-out;   /* 기본 상태에 넣어야 양쪽 다 부드러움 */
+}
+
+/* 평소: active는 빨강 */
+.location_tab a.active {
+    background-color: #EF1209;
+    border-color: #EF1209;
+    color: #fff;
+}
+
+/* 호버: active가 아닌 버튼(양산)에 마우스 올리면 → 빨강으로 */
+.location_tab a:not(.active):hover {
+    background-color: #EF1209;
+    border-color: #EF1209;
+    color: #fff;
+}
+
+/* 호버: active인 버튼(성남)에 마우스 올리면 → 흰색으로 */
+.location_tab a.active:hover {
+    background-color: #fff;
+    border-color: #D9D9D9;
+    color: #333;
+}
+
+
+/* ===== 주소 / 전화번호 ===== */
+.content_area address {
+    display: flex;
+    justify-content: center;
+    font-style: normal;
+    font-size: var(--font-16-size);
+    margin: 0 0 100px;
+}
+
+address strong{
+    color: var(--color-main);
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+address strong:nth-of-type(2){
+    margin-left: 100px;
+}
+.content_area .ys_address{margin-bottom: 200px;}
+/* ===== 지하철/대중교통/자차 공통 ===== */
+
+.info_list > li {
+    padding: 50px 0;
+    border-bottom: 1px solid #999;
+}
+
+/* 뺄까말까 고민중 */
+/* .info_list > li:first-child {
+    border-top: 1px solid red;
+} */
+
+.info_list dt {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: var(--font-gnb-size);
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.info_list dt i {
+    font-size: 20px;
+    color: var(--color-font1);
+}
+
+.info_list dd {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #555;
+    padding-left: 30px;
+}
+
+.info_list dd strong {
+    display: inline-block;
+    min-width: 60px;
+    color: var(--color-font1);
+    font-weight: 700;
+    margin-right: 10px;
+}
+.badge {
+    display: inline-block;
+    min-width: 50px;
+    text-align: center;
+    padding: 5px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: var(--font-gnb-size);
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+/* 버스 지선,간선,광역 라운드처리 */
+.badge_green {
+    color: #53B332;
+    border: 3px solid #53B332;
+}
+
+.badge_blue {
+    color: #0068B7;
+    border: 3px solid #0068B7;
+}
+
+.badge_orange {
+    color: #E60012;
+    border: 3px solid #E60012;
+}
+
+/* 지하철 노선 원형 마크 */
+.line_circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: var(--font-gnb-size);
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+.line_suin {
+    background-color: #ECA300;   /* 수인분당선 고유색(노랑/주황 계열) */
+}
+
+
+/* ===== 성남/양산 탭 전환 ===== */
+.content_area .location_panel{
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+.content_area .location_panel.on{
+    height: auto;
+    overflow: visible;
+    visibility: visible;
+}
+.content_area .info_list{margin-bottom: 200px;}

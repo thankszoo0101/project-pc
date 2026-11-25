@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+.content_area{
+    width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 150px;
+}
+.line_map strong{color: var(--color-main); font-weight: 700;}
+.content_area > section{
+    margin-bottom: 100px;
+}
+.content_area section > h3{
+    font-size: var(--font-h6-size);
+    font-weight: 700;
+    line-height: 1.2;
+    padding-left: 12px;
+    margin-bottom: 50px;
+    border-left: 4px solid var(--color-main);
+}
+
+
+.content_area .claimants > ul,
+.content_area .notice > ul{
+    display: flex;
+    gap: 24px;
+}
+.content_area .claimants > ul > li,
+.content_area .notice > ul > li{
+    flex: 1;
+    padding: 36px 30px 40px;
+    background: #fff;
+    border-radius: 10px;
+    border-top: 3px solid var(--color-main);
+    box-shadow: var(--box-shadow1);
+    transition: transform .3s ease;
+}
+.content_area .claimants > ul > li:hover,
+.content_area .notice > ul > li:hover{
+    transform: scale(1.05);
+}
+.content_area .claimants dt,
+.content_area .notice dt{
+    font-size: var(--font-gnb-size);
+    font-weight: 700;
+    color: var(--color-main);
+    margin-bottom: 20px;
+}
+.content_area .claimants dd,
+.content_area .notice dd{
+    font-size: var(--font-slogan-size);
+    color: var(--color-font1);
+    line-height: 1.7;
+    word-break: keep-all;
+}
+
+
+.content_area .method > ul{
+    padding: 10px 36px;
+    background: #fff;
+    box-shadow: var(--box-shadow1);
+    border-radius: 10px;
+}
+.content_area .method > ul > li{
+    display: flex;
+    align-items: center;
+    padding: 18px 0;
+    font-size: var(--font-gnb-size);
+    line-height: 1.6;
+}
+.content_area .method > ul > li + li{
+    border-top: 1px solid #eee;
+}
+.content_area .method > ul > li > span{
+    flex: none;
+    width: 140px;
+    color: var(--color-main);
+    font-weight: 700;
+}
+
+
+.content_area .procedure > ul{
+    display: flex;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+.content_area .procedure > ul > li{
+    flex: 1;
+    padding: 30px 20px;
+    background: #fff;
+    text-align: center;
+    border-radius: 10px;
+    border-top: 3px solid var(--color-main);
+    box-shadow: var(--box-shadow1);
+    transition: transform .3s ease;
+}
+.content_area .procedure > ul > li:hover{
+    transform: scale(1.05);
+}
+.content_area .procedure > ul dt{
+    font-size: var(--font-gnb-size);
+    font-weight: 700;
+    color: var(--color-main);
+    margin-bottom: 10px;
+}
+.content_area .procedure > ul dd{
+    font-size: var(--font-slogan-size);
+    color: var(--color-font2);
+    line-height: 1.6;
+}
+.content_area .procedure > ul dd strong{
+    display: block;
+    font-size: var(--font-sub-size);
+    font-weight: 700;
+    color: var(--color-font1);
+    margin-bottom: 6px;
+}
+.content_area .procedure > div{
+    padding: 30px 40px;
+    background: #fdeceb;
+    border-radius: 6px;
+}
+.content_area .procedure > div > ul > li{
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    font-size: var(--font-slogan-size);
+    line-height: 1.6;
+    word-break: keep-all;
+}
+.content_area .procedure > div > ul > li:last-child{
+    margin-bottom: 0;
+}
+.content_area .procedure > div > ul > li::before{
+    content: '→';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-main);
+    font-weight: 700;
+}
+.content_area .procedure > div > ul > li > span{
+    font-weight: 700;
+    color: var(--color-font1);
+}
+
+
+.content_area .notice .guidelines{
+    margin-top: 70px;
+}
+.content_area .notice .guidelines > h4{
+    font-size: var(--font-sub-size);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+.content_area .notice .guidelines > div{
+    padding: 30px;
+    background: #fff;
+    box-shadow: var(--box-shadow1);
+    border-radius: 10px;
+}
+.content_area .notice .guidelines > div > img{
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
